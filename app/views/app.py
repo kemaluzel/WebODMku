@@ -79,6 +79,34 @@ def map(request, project_pk=None, task_pk=None):
 
 
 @login_required
+def map_mobile(request, project_pk=None, task_pk=None):
+    title = _("Map Mobile")
+
+    if project_pk is not None:
+        project = get_object_or_404(Project, pk=project_pk)
+        if not request.user.has_perm('app.view_project', project):
+            raise Http404()
+
+        if task_pk is not None:
+            task = get_object_or_404(Task.objects.defer('orthophoto_extent', 'dsm_extent', 'dtm_extent'), pk=task_pk, project=project)
+            title = task.name or task.id
+            mapItems = [task.get_map_items()]
+        else:
+            title = project.name or project.id
+            mapItems = project.get_map_items()
+
+    return render(request, 'app/map_mobile.html', {
+            'title': title,
+            'params': {
+                'map-items': json.dumps(mapItems),
+                'title': title,
+                'public': 'false',
+                'share-buttons': 'false' if settings.DESKTOP_MODE else 'true'
+            }.items()
+        })
+
+
+@login_required
 def model_display(request, project_pk=None, task_pk=None):
     title = _("3D Model Display")
 
@@ -102,6 +130,31 @@ def model_display(request, project_pk=None, task_pk=None):
             }.items()
         })
 
+
+@login_required
+def model_display_mobile(request, project_pk=None, task_pk=None):
+    title = _("3D Model Display Mobile")
+
+    if project_pk is not None:
+        project = get_object_or_404(Project, pk=project_pk)
+        if not request.user.has_perm('app.view_project', project):
+            raise Http404()
+
+        if task_pk is not None:
+            task = get_object_or_404(Task.objects.defer('orthophoto_extent', 'dsm_extent', 'dtm_extent'), pk=task_pk, project=project)
+            title = task.name or task.id
+        else:
+            raise Http404()
+
+    return render(request, 'app/3d_model_display_mobile.html', {
+            'title': title,
+            'params': {
+                'task': json.dumps(task.get_model_display_params()),
+                'public': 'false',
+                'share-buttons': 'false' if settings.DESKTOP_MODE else 'true'
+            }.items()
+        })
+        
 def about(request):
     return render(request, 'app/about.html', {'title': _('About'), 'version': settings.VERSION})
 

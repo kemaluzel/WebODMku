@@ -266,6 +266,11 @@ footer{
     padding-bottom: 12px;
 }
 
+.full-height-mobile{
+    height: calc(100vh - 60px);
+    padding-bottom: 12px;
+}
+
 .floatfix{
     clear: both;
 }

@@ -124,7 +124,7 @@ class CamerasMenu extends React.Component{
     }
 }
 
-class ModelView extends React.Component {
+class ModelView_mobile extends React.Component {
   static defaultProps = {
     task: null,
     public: false,
@@ -304,8 +304,8 @@ class ModelView extends React.Component {
         
     viewer.loadGUI(() => {
       viewer.setLanguage('tr');
-      $("#menu_tools").next().show();
-      viewer.toggleSidebar();
+       $("#menu_tools").next().show();
+       viewer.toggleSidebar();
 
       if (this.hasTexturedModel()){
           window.ReactDOM.render(<TexturedModelMenu toggleTexturedModel={this.toggleTexturedModel}/>, $("#textured_model_button").get(0));
@@ -697,7 +697,7 @@ class ModelView extends React.Component {
              onContextMenu={(e) => {e.preventDefault();}}>
                 <div id="potree_render_area" 
                     ref={(domNode) => { this.container = domNode; }}></div>
-                <div id="potree_sidebar_container"> </div>
+				<div id="potree_sidebar_container"> </div>
           </div>
 
           <div className={"model-action-buttons " + (this.state.modalOpen ? "modal-open" : "")}>
@@ -716,10 +716,7 @@ class ModelView extends React.Component {
                 linksTarget="3d"
             />
             : ""}
-            <SwitchModeButton 
-                public={this.props.public}
-                task={this.props.task}
-                type="modelToMap" />
+            
         </div>
 
         {selectedCamera ? <div className="thumbnail">
@@ -752,9 +749,8 @@ $(function(){
     $("[data-modelview]").each(function(){
         let props = $(this).data();
         delete(props.modelview);
-        window.ReactDOM.render(<ModelView {...props}/>, $(this).get(0));
+        window.ReactDOM.render(<ModelView_mobile {...props}/>, $(this).get(0));
     });
 });
 
-export default ModelView;
-    
+export default ModelView_mobile;

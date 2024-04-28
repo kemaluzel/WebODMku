@@ -651,10 +651,6 @@ _('Example:'),
               queryParams={{t: this.props.mapType}}
             />
           : ""}
-          <SwitchModeButton 
-            task={this.state.singleTask}
-            type="mapToModel" 
-            public={this.props.public} />
         </div>
       </div>
     );

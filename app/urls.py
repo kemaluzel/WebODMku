@@ -32,7 +32,14 @@ urlpatterns = [
     url(r'^public/task/(?P<task_pk>[^/.]+)/3d/$', public_views.model_display, name='public_3d'),
     url(r'^public/task/(?P<task_pk>[^/.]+)/iframe/3d/$', public_views.model_display_iframe, name='public_iframe_3d'),
     url(r'^public/task/(?P<task_pk>[^/.]+)/json/$', public_views.task_json, name='public_json'),
-
+    
+    # MOBIL İCİN EKLENDİ
+    url(r'^mapmobile/project/(?P<project_pk>[^/.]+)/task/(?P<task_pk>[^/.]+)/$', app_views.map_mobile, name='map_mobile'),
+    url(r'^3dmobile/project/(?P<project_pk>[^/.]+)/task/(?P<task_pk>[^/.]+)/$', app_views.model_display_mobile, name='model_display_mobile'),
+    url(r'^public/task/(?P<task_pk>[^/.]+)/mapmobile/$', public_views.map_mobile, name='public_map_mobile'),
+    url(r'^public/task/(?P<task_pk>[^/.]+)/3dmobile/$', public_views.model_display_mobile, name='public_3d_mobile'),
+    # MOBIL İCİN EKLENDİ
+    
     url(r'^processingnode/([\d]+)/$', app_views.processing_node, name='processing_node'),
 
     url(r'^api/', include("app.api.urls")),
