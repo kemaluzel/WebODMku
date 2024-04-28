@@ -1,0 +1,12 @@
+{% extends "app/public/base_mobile.html" %}
+
+{% block content %}
+	{% load render_bundle from webpack_loader %}
+	{% render_bundle 'MapView_mobile' attrs='async' %}
+
+	<div data-mapview-web 
+		{% for key, value in params %}
+			data-{{key}}="{{value}}"
+		{% endfor %}
+	></div>
+{% endblock %}

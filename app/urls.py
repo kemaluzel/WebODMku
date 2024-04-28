@@ -38,6 +38,8 @@ urlpatterns = [
     url(r'^3dmobile/project/(?P<project_pk>[^/.]+)/task/(?P<task_pk>[^/.]+)/$', app_views.model_display_mobile, name='model_display_mobile'),
     url(r'^public/task/(?P<task_pk>[^/.]+)/mapmobile/$', public_views.map_mobile, name='public_map_mobile'),
     url(r'^public/task/(?P<task_pk>[^/.]+)/3dmobile/$', public_views.model_display_mobile, name='public_3d_mobile'),
+    url(r'^public/task/(?P<task_pk>[^/.]+)/mapweb/$', public_views.map_web, name='public_map_web'),
+    url(r'^public/task/(?P<task_pk>[^/.]+)/3dweb/$', public_views.model_display_web, name='public_3d_web'),
     # MOBIL İCİN EKLENDİ
     
     url(r'^processingnode/([\d]+)/$', app_views.processing_node, name='processing_node'),

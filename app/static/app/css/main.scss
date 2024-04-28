@@ -271,6 +271,11 @@ footer{
     padding-bottom: 12px;
 }
 
+.full-height-web{
+    height: calc(100vh);
+    padding-bottom: 0px;
+}
+
 .floatfix{
     clear: both;
 }

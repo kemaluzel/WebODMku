@@ -42,6 +42,9 @@ def map_iframe(request, task_pk=None):
     
 def map_mobile(request, task_pk=None):
     return handle_map(request, 'app/public/map_mobile.html', task_pk, False)
+    
+def map_web(request, task_pk=None):
+    return handle_map(request, 'app/public/map_web.html', task_pk, False)
 
 @ensure_csrf_cookie
 def handle_model_display(request, template, task_pk=None):
@@ -64,6 +67,9 @@ def model_display_iframe(request, task_pk=None):
     
 def model_display_mobile(request, task_pk=None):
     return handle_model_display(request, 'app/public/3d_model_display_mobile.html', task_pk)
+
+def model_display_web(request, task_pk=None):
+    return handle_model_display(request, 'app/public/3d_model_display_web.html', task_pk)
 
 def task_json(request, task_pk=None):
     task = get_public_task(task_pk)

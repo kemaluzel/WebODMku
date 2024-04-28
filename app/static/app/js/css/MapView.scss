@@ -2,6 +2,10 @@
     height: calc(100vh - 100px);
 }
 
+[data-mapview-web]{
+    height: calc(100vh);
+}
+
 .map-view{
     height: calc(100% - 20px);
     position: relative;
