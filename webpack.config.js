@@ -19,6 +19,7 @@ module.exports = {
     MapView: ['./app/static/app/js/MapView.jsx'],
     ModelView: ['./app/static/app/js/ModelView.jsx'],
     MapView_mobile: ['./app/static/app/js/MapView_mobile.jsx'],
+	MapView_web: ['./app/static/app/js/MapView_web.jsx'],
     ModelView_mobile: ['./app/static/app/js/ModelView_mobile.jsx']
   },
 

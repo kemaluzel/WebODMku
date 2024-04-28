@@ -2,9 +2,9 @@
 
 {% block content %}
 	{% load render_bundle from webpack_loader %}
-	{% render_bundle 'MapView_mobile' attrs='async' %}
+	{% render_bundle 'MapView_web' attrs='async' %}
 
-	<div data-mapview-web 
+	<div data-mapview 
 		{% for key, value in params %}
 			data-{{key}}="{{value}}"
 		{% endfor %}
