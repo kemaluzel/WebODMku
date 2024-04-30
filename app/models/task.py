@@ -173,10 +173,10 @@ def resize_image(image_path, resize_to, done=None):
 
 class Task(models.Model):
     ASSETS_MAP = {
-            #'all.zip': {
-            #    'deferred_path': 'all.zip',
-            #    'deferred_compress_dir': '.'
-            #},
+            'all.zip': {
+                'deferred_path': 'all.zip',
+                'deferred_compress_dir': '.'
+            },
             'orthophoto.tif': os.path.join('odm_orthophoto', 'odm_orthophoto.tif'),
             'orthophoto.png': os.path.join('odm_orthophoto', 'odm_orthophoto.png'),
             'orthophoto.mbtiles': os.path.join('odm_orthophoto', 'odm_orthophoto.mbtiles'),
@@ -215,7 +215,7 @@ class Task(models.Model):
             },
             'cameras.json': 'cameras.json',
             'shots.geojson': os.path.join('odm_report', 'shots.geojson'),
-            #'report.pdf': os.path.join('odm_report', 'report.pdf'),
+            'report.pdf': os.path.join('odm_report', 'report.pdf'),
             'ground_control_points.geojson': os.path.join('odm_georeferencing', 'ground_control_points.geojson'),
     }
 

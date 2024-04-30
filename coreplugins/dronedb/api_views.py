@@ -314,7 +314,7 @@ DRONEDB_ASSETS = [
     'dtm.tif',
     'dsm.tif',
     'shots.geojson',
-    #'report.pdf',
+    'report.pdf',
     'ground_control_points.geojson'
 ]
 
