@@ -303,7 +303,7 @@ class ModelView extends React.Component {
     viewer.loadSettingsFromURL();
         
     viewer.loadGUI(() => {
-      viewer.setLanguage('tr');
+      viewer.setLanguage('en');
       $("#menu_tools").next().show();
       viewer.toggleSidebar();
 
