@@ -702,6 +702,19 @@ class ModelView_mobile extends React.Component {
 
 
 
+
+		<div className={"model-action-buttons " + (this.state.modalOpen ? "modal-open" : "")}>
+            <AssetDownloadButtons 
+                            task={this.props.task} 
+                            direction="up" 
+                            showLabel={false}
+                            buttonClass="btn-secondary"
+                            onModalOpen={() => this.setState({modalOpen: true})}
+                            onModalClose={() => this.setState({modalOpen: false})} />
+
+        </div>
+
+
         {selectedCamera ? <div className="thumbnail">
             <a className="close-thumb" href="javascript:void(0)" onClick={this.closeThumb}><i className="fa fa-window-close"></i></a>
             <ImagePopup feature={selectedCamera._feat} task={task} />
