@@ -238,17 +238,7 @@ class Map extends React.Component {
                                     ${name}
                                 </div>
                                 <div class="popup-opacity-slider">Opacity: <input id="layerOpacity" type="range" value="${layer.options.opacity}" min="0" max="1" step="0.01" /></div>
-                                <div>Bounds: [${layer.options.bounds.toBBoxString().split(",").join(", ")}]</div>
-                                <ul class="asset-links loading">
-                                    <li><i class="fa fa-spin fa-sync fa-spin fa-fw"></i></li>
-                                </ul>
-
-                                <button
-                                    onclick="location.href='/3d/project/${meta.task.project}/task/${meta.task.id}/';"
-                                    type="button"
-                                    class="switchModeButton btn btn-sm btn-secondary">
-                                    <i class="fa fa-cube"></i> 3D
-                                </button>`;
+                                <div>Bounds: [${layer.options.bounds.toBBoxString().split(",").join(", ")}]</div>`;
 
             layer.bindPopup(popup);
 
